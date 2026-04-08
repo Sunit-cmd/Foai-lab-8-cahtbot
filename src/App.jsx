@@ -19,7 +19,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0",
+        "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -63,7 +63,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "https://router.huggingface.co/v1/chat/completions",
+        "https://router.huggingface.co/hf-inference/v1/chat/completions",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -71,7 +71,7 @@ function App() {
           },
           method: "POST",
           body: JSON.stringify({ 
-            model: "Qwen/Qwen3-4B-Instruct-2507:nscale",
+            model: "Qwen/Qwen2.5-72B-Instruct",
             messages: [{ role: "user", content: prompt }],
             max_tokens: 400
           }),
@@ -145,7 +145,7 @@ function App() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
               </svg>
-              Text-to-Text Generator (Qwen)
+              Text-to-Text Generator (Qwen 2.5)
             </button>
           </div>
         </div>
@@ -173,7 +173,7 @@ function App() {
 
         <div className="header" style={{ marginTop: '0.5rem' }}>
           <h1>{view === 'image' ? 'ImageFlow AI' : 'TextGen AI'}</h1>
-          <p>{view === 'image' ? 'Generate stunning images from text' : 'Ask questions or explore ideas with Qwen'}</p>
+          <p>{view === 'image' ? 'Generate stunning images from text' : 'Ask questions or explore ideas with Qwen 2.5'}</p>
         </div>
 
         <div className="input-group">
